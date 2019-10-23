@@ -1,0 +1,1 @@
+s:148:"<script type="text/javascript">$('#Ejercicio').change(function(){window.location='Sys_Screen?v=Campanasavisos&g=pages&e='+$(this).val();});</script>";

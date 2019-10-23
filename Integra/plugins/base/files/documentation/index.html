@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Media Manager - Documentation</title>    
+<link href="css/bootstrap.min.css" rel="stylesheet">    
+<link href="css/simple-sidebar.css" rel="stylesheet">
+<link href="css/prettify.css" rel="stylesheet">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<style type="text/css">
+body {
+  position: relative;
+}
+.alt { 
+  color: #666; 
+  font-family: "Warnock Pro", "Goudy Old Style","Palatino","Book Antiqua", Georgia, serif; 
+  font-style: italic;
+  font-weight: normal;
+}
+</style>
+<body data-spy="scroll" data-target="#navbar">
+   <div id="wrapper">            
+        <div id="sidebar-wrapper"> 
+        	<div id="navbar" role="navigation">
+	            <ul class="sidebar-nav nav">
+	                <li><a href="#top">Overview</a></li>
+	                <li><a href="#howto">How to use Media Manager</a></li>
+	                <li><a href="#html">HTML Structure</a></li>
+	                <li><a href="#css">CSS Files</a></li>
+	                <li><a href="#js">Javascript</a></li>
+	                <li><a href="#php">PHP code explanation</a></li>
+	                <li><a href="#settings">Media Manager settings</a></li>
+	                <li><a href="#credits">Sources and Credits</a></li>	                
+	            </ul> 
+	        </div>           
+        </div>        
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <section id="overview-section">
+                        <div id="overview" class="col-lg-12">
+                            <a href="#menu-toggle" class="btn btn-default btn-sm" id="menu-toggle">Toggle Menu</a>
+                            <h3 class="text-center alt">&ldquo;Media Manager&rdquo; Documentation by &ldquo;Prashant Pareek&rdquo; v1.1.3</h3>		
+							<hr>
+                            <h1>Media Manager for CodeIgniter <small>by <a target="_blank" href="http://codecanyon.net/user/prashantpareek">Prashant Pareek</a></small></h1>  
+                            <hr>                      
+                            <p class="alert alert-info">Thank you for purchasing my script. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a target="_blank" href="http://codecanyon.net/user/prashantpareek">here</a>. Thanks so much!</p> 
+                            <table class="table table-striped table-condensed table-bordered">
+                                <tr><td>Created:</td><td>25th November, 2014</td></tr>
+                                <tr><td>By:</td><td>Prashant Pareek</td></tr>
+                                <tr><td>Email:</td><td><a href="mailto:prashantpareek1988@.gmail.com">prashantpareek1988@.gmail.com</a></td></tr>
+                            </table>                                                                        
+                        </div>
+                    </section>
+                    <section id="howto-section">
+                        <div id="howto" class="col-lg-12">                            
+                            <h3>How to use Media Manager</h3> 
+                            <hr>                      
+                            <p>This is ready to use script for your codeigniter projects. In order to use media manager files in your project, you need to merge model, view and controller files into your project's mvc folder. Media manager inclues following files:</p>
+                            <table class="table table-condensed table-bordered">
+                                <tr><th>Controllers</th><th>Modals</th><th>Views</th></tr>
+                                <tr><td>media.php</td><td>manager.php</td><td>index.php</td></tr>
+                                <tr><td></td><td></td><td>manager.php</td></tr>
+                                <tr><td></td><td></td><td>medialist.php</td></tr>
+                            </table>  																											
+                            <p>You can access your project's MVC folders (models, views and controllers) in:<br> your-project-folder/application/...</p>
+							<p>Media Manager uses folder named "assets" placed in root folder as base folder for calling all its css, js, fonts and other files.</p>
+							<ol type="number"> 
+								<li>First place media.php file into your controllers folder.<br>
+								On line no. 23 change the location of model file.<br>
+								<code>$this->load->model('your-models-path-here/manager');</code><br><br>
+								On line no. 87 change the location of view files from where you want to load media manager view files.<br>
+								<code>$this->load->view('your-views-path-here/index',$data);</code><br><br>
+								You can place these view files into a folder (like folder named "mediamanager"). Then you have to change the above line to:--<br>
+								<code>$this->load->view('mediamanager/index',$data);</code><br><br>
+								'index.php' file calls required css and js files, and loads layout of media manager . So if you want, you can merge it with your own index.php file (in case you have knowledge of working with html and php)
+								</li>
+								<li>Place model file 'manager.php' into your models folder.</li>
+								<li>Place view files of media manager into your views folder.</li>
+								<li>After placing all files in place you need to create a link to call media manager in your project's view file. For eg:-<br>
+								If you have placed controller file 'media.php' into controllers/admin folder, then create link to it as-<br>
+								<pre><code>&lt;a href="&lt;?php site_url('admin/media'); ?&gt;">Media Manager&lt;/a&gt;</code></pre>
+								</li>
+							</ol>
+                        </div>
+                    </section>
+                    <section id="html-section">
+                        <div id="html" class="col-lg-12">                            
+                            <h3>HTML Structure</h3>
+                            <hr>
+                            <p>The HTML structure is a fluid layout with two columns. The folder tree structure content is nested within a div with an id of  "treeview". The media container (column #2) content is within a div with an id of "mediaview". The media container element lies in two div with ids "thumbsView" and "detailsView". "thumbsView" contents thumbnail view of media while "detailsView" contents tabular structure of media. The general template structure is the same throughout the template. Here is the general structure.</p>
+							<img src="images/htmlstructure.png" alt="HTML Structure" />
+                        </div>
+                    </section>
+                    <section id="css-section"> 
+                        <div id="css" class="col-lg-12">
+                        	<h3>CSS Files</h3>
+                            <hr>                      
+                            <p>This script uses 3 css files, which are as follows:</p>
+							<ol>
+								<li>bootstrap.min.css</li>
+								<li>dropzone.css</li>
+								<li>magnific-popup.css</li>	
+								<li>media.css</li>
+							</ol> 
+							<ol>
+								<li>bootstrap.min.css is a bootstrap framework css file for developing responsive websites.</li>
+								<li>dropzone.css contains styles for drag and drop file upload feature.</li>
+								<li>magnific-popup.css is a lightbox plugin css for image popups styling.</li>
+								<li>media.css contains all of the specific stylings for the page. The file is separated into sections using:</li>
+							</ol>  
+							<pre>	/* === Toolbar Section === */
+
+	#controls {
+		background-color: #eee;
+		padding: 4px 0;
+		border-bottom: 1px solid #ddd;
+		line-height: 38px
+	}
+	.btn-toolbar .btn-wrapper {
+		display: inline-block
+	}
+
+	...
+
+	/* === Folder Treeview Section === */
+	
+	#treeview {
+		background:#11998F;
+		padding:5px 10px 5px 0;
+	}
+	#media-home {
+		list-style:none;
+		padding-left:10px
+	}
+	.folder-list {
+		padding:0 0 0 10px;
+		margin:0;
+		list-style:none
+	}	
+
+	...
+
+	/* === Mediaview Section === */
+	
+	#mediaview {
+		width: 100%;
+		overflow-y: auto;
+		overflow-x: hidden
+	}
+
+	...	
+
+	etc, etc. 
+							</pre>
+							<p>If you would like to edit a specific section of the site, simply find the appropriate label in the CSS file, and then scroll down until you find the appropriate style that needs to be edited.</p> 
+							<p>Off-canvas layout is used to show folder tree structure for smaller screens. Here you can find its styling:</p>
+							<pre>	.wrap {
+		position:relative;
+		-webkit-transition:all 0.3s ease-out;
+		-moz-transition:all 0.3s ease-out;
+		-ms-transition:all 0.3s ease-out;
+		-o-transition:all 0.3s ease-out;
+		transition:all 0.3s ease-out
+	}
+	.wrap.active {
+		left:215px
+	}
+	@media screen and (max-width:48.063em) {
+		#treeview{width:215px;}
+		.js .oc{width:auto;position:absolute;top:0;left:-215px}
+	}
+	@media screen and (min-width:48.25em) {
+		.wrap.active{left:0}
+	}	
+							</pre>                            
+                        </div>                                   
+                    </section>
+                    <section id="js-section"> 
+                        <div id="js" class="col-lg-12">
+                        	<h3>Javascript</h3>
+                            <hr>
+                            <p>This theme imports three Javascript files.</p>
+							<ol>
+								<li>bootbox.min.js</li>
+								<li>bootstrap.min.js</li>
+								<li>client.js</li>
+								<li>cookie.js</li>
+								<li>dropzone.min.js</li>
+								<li>html5shiv.min.js</li>								
+								<li>jquery.magnific-popup.min.js</li>
+								<li>jquery-1.11.1.min.js</li>
+								<li>masonry.pkgd.min.js</li>								
+								<li>media.js</li>
+								<li>respond.min.js</li>								
+							</ol>
+							<br>
+							<ol>
+								<li>Bootbox is a jquery plugin which uses bootstrap to show alert messages in bootstrap modals.</li>			
+								<li>Bootstrap is a popular html, css and js framework for developing responsive websites.</li>					
+								<li>client.js collects client side browser information like operating system, browser etc to support cross browser compatibility for file upload.</li>
+								<li>jquery cookie plugin is to save current view (thumb or details) on user's system.</li>
+								<li>dropzone supports drag and drop feature for file upload.</li>
+								<li>HTML5Shiv is a JavaScript workaround, invented by Sjoerd Visscher, to enable styling of HTML5 elements in versions of Internet Explorer prior to version 9, which do not allow unknown elements to be styled without JavaScript.</li>
+								<li>Magnific Popup is a responsive lightbox & dialog script to show image popups.</li>
+								<li>jQuery is a Javascript library that greatly reduces the amount of code that you must write.</li>
+								<li>Masonry is a JavaScript grid layout library. It works by placing elements in optimal position based on available vertical space</li>																
+								<li>Most of the workarounds of media manager uses media js script. There are a few functions worth looking over.
+								    <br>
+								    <br>
+									<pre>
+<strong>Initialize dropzone code to support drag and drop.</strong>
+	Dropzone.options.uploadForm = {
+		paramName: 'filedata',
+        uploadMultiple: true,
+        ...
+	}										
+<strong>Js to support off-canvas view for smaller screens.</strong>
+	$('body').addClass('js');
+    var menulink = $('#showTreeView'),
+        wrap = $('#wrap');
+    menulink.click(function() {
+        menulink.toggleClass('active');
+        wrap.toggleClass('active');
+        return false;
+    });  
+
+<strong>Remove multiple attribute from file upload form for safari browsers (multiple file upload not supported)</strong>
+	var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+    if (isSafari) {
+        $('#upload-file').removeAttr('multiple')
+    }
+
+<strong>Initiating masonry layout for media in thumnail view</strong>
+	var cw = 200;
+    var wd = $(window).width();
+    if((wd > 0) && (wd <= 767)) {
+        cw = 120;
+    }
+
+    msnry = new Masonry('#masonry-container', {
+		columnWidth: cw,
+		itemSelector: '.item',
+		gutter: 10
+    });  
+
+<strong>Set default view if cookie exists</strong>
+	var view  = ($.cookie('view')) ? '#details' : '#thumbs';     
+    $(view).addClass('active');
+    $(view + 'View').removeClass('hidden');
+    if(view == '#thumbs'){
+        $('#toolbar-select').removeClass('hidden');
+        msnry.layout();
+    }  
+								</pre>
+							</li>	
+							<li>Respond.js is an experimental jQuery plugin for building websites with responsive content.</li>
+						</ol>
+                        </div>
+                    </section>
+                    <section id="php-section"> 
+                        <div id="php" class="col-lg-12">
+                        	<h3>PHP Code Explanation</h3>
+                            <hr>
+                            <p>This script is developed in Codeigniter PHP Framework (Version: 2.2.0).I am listing down the notable function which are used for various operations of this script.</p>
+							<ul>
+								<li><p>File: application/controllers/media<br>
+								This function load media folder tree structure and media list of selected media folder</p>
+								<pre>
+	public function index()
+	{
+	}
+								</pre>
+								</li>
+								<li><p>File: application/controllers/media<br>
+								Create folder in selected media directory</p>
+								<pre>
+	public function create_folder()
+	{
+	}
+								</pre>
+								</li>
+								<li><p>File: application/controllers/media<br>
+								Remove media(s) in selected media directory</p>
+								<pre>
+	public function remove_media()
+	{
+	}
+								</pre>
+								</li>
+								<li><p>File: application/controllers/media<br>
+								Save media manager settings.</p>
+								<pre>
+	public function save_params()
+	{
+	}
+								</pre>
+								</li>
+								<li><p>File: application/models/media<br>
+								Uploads media and set notifications for errors or success message</p>
+								<pre>
+	public function upload_files()
+	{
+	}
+								</pre>
+								</li>
+							</ul>
+                        </div>
+                    </section>
+                    <section id="settings-section"> 
+                        <div id="settings" class="col-lg-12">
+                        	<h3>Media Manager Settings</h3>
+                            <hr>
+                            <ul>
+								<li>Allowed Types: Comma separated list of file extensions allowed to upload via script.<br>
+								Add your own extensions separated by comma (it must be supported by CodeIgniter).</li>
+								<li>Maximum Size: Maximum file size (in MB) allowed to upload, set 0 for no limit.</li>
+								<li>Maximum Width: Maximum width of image (in pixels) allowed to upload, set 0 for no limit.</li>
+								<li>Maximum Height: Maximum height of image (in pixels) allowed to upload, set 0 for no limit.</li>
+								<li>Media Folder: Root media folder to show directory structure and media</li>
+								<li>Maximum File Name: Maximum no. of characters a uploaded file can have, set 0 for no limit.</li>
+								<li>Overwrite: Overwrite files with same name while uploading.</li>
+								<li>Remove Spaces: Remove spaces from names of uploaded files.</li>
+								<li>Encrypt File Name: Encrypt upload file name</li>
+								<li>Restore Default Settings: Restore default settings of media manager.</li>
+							</ul>
+                        </div>
+                    </section>
+                    <section id="credits-section"> 
+                        <div id="credits" class="col-lg-12">
+                        	<h3>Sources and Credits</h3>
+                            <hr>
+                            <p>I've used the following images and icons.
+							<ul>
+								<li>Example images from https://unsplash.com</li>
+								<li>Image icon set for file formats from http://www.teambox.com</li>		
+							</ul>
+							<hr>
+							<p>Once again, thank you so much for purchasing media manager script. As I said at the beginning, I'd be glad to help you if you have any questions relating to this script. No guarantees, but I'll do my best to assist. If you have a more general question relating to the scripts on CodeCanynon, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p>
+							<p><strong>Prashant Pareek</strong></p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/prettify.js"></script>
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });               	
+    </script>
+</body>
+</html>

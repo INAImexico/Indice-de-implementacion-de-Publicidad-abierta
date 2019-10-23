@@ -1,0 +1,34 @@
+<html>
+<head>
+  <title>Go</title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="../css/cm.css">
+  <script src="cm.js"></script>
+  <script src="js.js"></script>
+</head>
+<body>
+   <form action='../../d3d/xcrud/xcrud_go.php' method='post' style="display:none;" id="myform">
+      <textarea rows='4' cols='50' id='myTextarea'></textarea>
+      <input type='submit' value='Enviar'>
+      <input type='reset' value='Borrar'>
+   </form>
+<script>
+   function getGET(){
+      var loc = document.location.href;
+      var getString = loc.split('?')[1];
+      var GET = getString.split('&');
+      var get = {};
+      for(var i = 0, l = GET.length; i < l; i++){
+         var tmp = GET[i].split('=');
+         get[tmp[0]] = unescape(decodeURI(tmp[1]));
+      }
+      return get;
+   }
+   var get = getGET();
+   document.getElementById('myform').style.display = "block";
+   var editor = CodeMirror.fromTextArea(myTextarea, {
+       lineNumbers: true
+   });
+</script>
+</body>
+</html>

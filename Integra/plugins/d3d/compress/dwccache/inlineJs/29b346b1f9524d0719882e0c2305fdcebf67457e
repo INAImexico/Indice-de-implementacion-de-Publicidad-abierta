@@ -1,0 +1,1 @@
+s:354:"<script type="text/javascript">var permanotice,tooltip,_alert;$(function(){new PNotify({title:"Notificación",type:"info",text:"Tres nuevos candidatos registrados!",nonblock:{nonblock:true},before_close:function(PNotify){PNotify.update({title:PNotify.options.title+" - Enrolamiento",before_close:null});PNotify.queueRemove();return false;}});});</script>";

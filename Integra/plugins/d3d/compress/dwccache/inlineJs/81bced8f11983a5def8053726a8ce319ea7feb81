@@ -1,0 +1,1 @@
+s:253:"<script type="text/javascript">$(document).ready(function(){document.getElementById("username").focus();$('#clave').keypress(function(event){var keycode=(event.keyCode?event.keyCode:event.which);if(keycode=='13'){document.forms[0].submit();}});</script>";

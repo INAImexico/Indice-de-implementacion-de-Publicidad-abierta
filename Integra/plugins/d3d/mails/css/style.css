@@ -1,0 +1,93 @@
+      @import url(http://fonts.googleapis.com/css?family=Raleway:400,700&effect=shadow-multiple);
+      body{
+         width: 100%; 
+         background-color: #2f2e2e; 
+         margin:0; 
+         padding:0; -webkit-font-smoothing: antialiased;mso-margin-top-alt:0px; mso-margin-bottom-alt:0px; mso-padding-alt: 0px 0px 0px 0px;}
+      span.preheader{display: none; font-size: 1px;}
+      html{width: 100%;}
+      .ReadMsgBody {
+         width: 100%;
+         background-color: #ffffff;
+      }
+      .ExternalClass {
+         width: 100%;
+         background-color: #ffffff;
+      }      
+      .ExternalClass,
+      .ExternalClass p,
+      .ExternalClass span,
+      .ExternalClass font,
+      .ExternalClass td,
+      .ExternalClass div {
+         line-height: 100%;
+      }    
+      table { border-spacing: 0; 
+         border-collapse: collapse; 
+         mso-table-lspace:0pt;
+         mso-table-rspace:0pt;
+         table-layout: fixed;
+         margin: 0 auto;
+      }
+      table td { border-collapse: collapse; }
+      img {display:block;}
+      /* just apply some height and width to the wrapper.*/
+      .mg-image50 {
+         width:50px;
+         height:50px;
+         overflow: hidden;
+      }
+      /* just apply some height and width to the wrapper.*/
+      .mg-image300 {
+         width:300px;
+         overflow: hidden;
+      }
+      /* just apply some height and width to the wrapper.*/
+      .mg-image150 {
+         width:150px;
+         overflow: hidden;
+      }
+      @media only screen and (max-width:640px)
+      {
+         body{width:auto!important;}
+         body[yahoo] .two-left{width:440px !important; margin:0px auto; clear: both;}
+         body[yahoo] .logo-left{width:21% !important; margin:0px auto; clear: both;}
+         body[yahoo] .menu-right{width:47% !important; text-align: left; margin:0px auto; clear: both;}
+         body[yahoo] .p1-two-left{width:420px !important; margin:0px auto; clear: both;}
+         body[yahoo] .p2-two-left{width:420px !important; margin:0px auto; clear: both;}
+         body[yahoo] .p3-two-left{width:420px !important; margin:0px auto; clear: both;}
+         body[yahoo] .bt-two-left{width:420px !important; margin:0px auto;}
+         body[yahoo] .bt-down-left{width:300px !important; margin:0px auto; clear: both;}
+         body[yahoo] .full{width:100% !important; margin:0px auto; clear: both;}
+         table[class="tb700"] { width: 100% !important; }
+         table[class="tb650"] { width: 95% !important; }
+         table[class="tb600"] { width: 90% !important; }
+         body[yahoo] table[class="tb300"] {  width: 46% !important; clear: both;}
+         body[yahoo] table[class="tb410"] { width: 60% !important; clear: both;}
+         body[yahoo] table[class="tb160"] { width: 75% !important; clear: both;}
+         body[yahoo] table[class="tb2-2"] { width: 47% !important; text-align: left !important; clear: both;}
+         body[yahoo] table[class="tb3-3"] { width: 100% !important; text-align: center !important; clear: both;}   
+         /* just apply some height and width to the wrapper.*/
+    }
+    @media only screen and (max-width:479px)
+    {
+       body{width:auto!important;}
+       body[yahoo] .two-left{ width: 280px !important; text-align: left !important; clear: both; }
+       body[yahoo] .logo-left{width:100% !important; margin:0px auto; clear: both;}
+       body[yahoo] .menu-right{width:100% !important; margin:0px auto; clear: both;}
+       body[yahoo] .p1-two-left{width:252px !important; margin:0px auto; clear: both;}
+       body[yahoo] .p2-two-left{width:238px !important; margin:0px auto; clear: both;}
+       body[yahoo] .p3-two-left{width:266px !important; margin:0px auto; clear: both;}
+       body[yahoo] .bt-two-left{width:200px !important; margin:0px auto; clear: both;}
+       body[yahoo] .bt-down-left{width:250px !important; margin:0px auto; clear: both;}
+       body[yahoo] .full{width:100% !important; margin:0px auto; clear: both;}
+       body[yahoo] table[class="tb700"] { width: 310px !important; clear: both;}
+       body[yahoo] table[class="tb650"] { width: 300px !important; clear: both; }
+       body[yahoo] table[class="tb600"] { width: 280px !important; clear: both;}
+       body[yahoo] table[class="tb300"] {  width:100% !important; clear: both;}
+       body[yahoo] table[class="tb410"] { width: 260px !important; clear: both;}
+       body[yahoo] table[class="tb160"] { width: 160px !important; clear: both;}
+       body[yahoo] table[class="tb2-2"] { width: 100% !important; text-align: left !important; clear: both;}
+       body[yahoo] table[class="tb3-3"] { width: 100% !important; text-align: center !important; clear: both;}
+   }
+

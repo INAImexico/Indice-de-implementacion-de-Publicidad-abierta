@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* @import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light); */
+@import url(https://fonts.googleapis.com/css?family=Dosis);
+
+/* Presentation Styles - Nor related to the plugin */
+
+body {
+	font-size: 12px;
+/*	font-family: Arial, Helevtica, Verdana, san-serif; */
+	font-family: 'Dosis', sans-serif;
+	color: #333;
+	background: #f9f9f9;
+	text-align:center;
+}
+
+#content {
+	max-width:960px;
+	margin: 0 auto;
+	text-align:left;
+	width: 100%;
+}
+
+#content h1 h2 h3 h4 h5{
+	text-align:center;	
+/*	font-family: 'Shadows Into Light', cursive;*/
+	font-family: 'Dosis', sans-serif;
+	font-size:55px;
+	text-shadow:1px 1px #fff;
+}
+
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+#socialTimeline {
+	margin: 0 auto;	
+}

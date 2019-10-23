@@ -1,0 +1,1 @@
+s:105:"<script type="text/javascript">$('#toggle').click(function(){screenfull.toggle($('html')[0]);});</script>";
